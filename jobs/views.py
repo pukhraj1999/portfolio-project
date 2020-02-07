@@ -5,4 +5,4 @@ from jobs.models import Job
 def home(request):
     # To get all objects of job and convert them into dictionary
     jobs=Job.objects
-    return render(request,'home.html',{'jobs':jobs})
+    return render(request,'jobs/home.html',{'jobs':jobs})
