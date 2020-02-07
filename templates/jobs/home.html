@@ -60,16 +60,32 @@
             <ul class="navbar-nav ml-auto" \>
               <!-- active in navbar makes them active -->
               <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/pukhraj_76/?hl=en">Instagram</a>
+                <a class="nav-link" href="#">Home</a>
               </li>
 
               <li class="nav-item">
+                <a class="nav-link" href="{%url 'admin:index' %}">Admin</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.instagram.com/pukhraj_76/?hl=en">Instagram</a>
+              </li>
+
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Resume</a>
               </li>
 
               <li class="nav-item">
                 <a class="nav-link" href="#">Blog</a>
-              </li>
+              </li> -->
 
             </ul>
           </div>
@@ -83,6 +99,9 @@
       <div class="container">
         <h1>Hi there!</h1>
         <h1 class="display-4">Welcome to my site.</h1>
+        <hr class='my-4'>
+        <img src="\media\pukhraj.jpg" class="img-fluid" alt="Responsive image" height='500' width=500>
+        <h1 id='about'>Who am I?</h1>
         <p class="lead text-muted">I am Pukhraj Singh,student of computer science and engineering [Semester->2] in GNDU,Amritsar.I love coding.I want to explore different sectors of IT.I want to learn Machine learning,Gaming development,Android development.
           There are lot of things that I want to accomplish in my 4 year Btech Degree.Take a glace at my works below that I had done using different
           libraries of python language.I love to code in Python language due to it's simplicity.
@@ -98,24 +117,25 @@
 
     <div class="album py-5 bg-light">
       <div class="container">
-        
-        <div class="row">
+        <div class="row" id='projects'>
           <!-- Applying for loop for back-ending -->
+          
           {%for job in jobs.all%}
-          <div class="col-lg-4 col-xs-6">
-            <div class="card mb-6 col-xs-6 shadow-sm">
-              <img src="{{ job.image.url }}" alt="Not found">
+          <div class="col-md-4 col-xs-6">
+            <div class="card mb-4 shadow-sm">
+              <img src="{{ job.image.url }}" height="300" width='345' alt="Not found" >
               <div class="card-body"> 
-                <p class="card-text">{{job.summary}}</p>
+                <p class="card-text" >{{job.summary}}</p>
               </div>
             </div>
-            {%endfor%}
           </div>
+          {%endfor%}
           
 
 
       </div>
     </div>
+    <p id='description' class='text-center'>New Projects and Blog page coming soon!</p>
 
   </main>
 
@@ -123,7 +143,8 @@
     <!-- text-postion move position -->
     <div class="container text-center">
       <!-- {% now "Y" %} ->Add year -->
-      <p>©Copyright Pukhraj Singh: {% now "Y" %}</p> 
+      <p>©Copyright Pukhraj Singh: {% now "Y" %}</p>
+      <p>Made using django framework.</p> 
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
